@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripGO</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo externo de CSS -->
+</head>
+<body>
+    <header class="header">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="Image/Icono.png" alt="Logo">
+            <span>TRIPGO</span>
+        </div>
+
+        <!-- Menú central -->
+        <ul class="menu">
+            <li class="menu-item">Registro</li>
+            <li class="menu-item">Ver destinos</li>
+            <li class="menu-item">Calificar destinos</li>
+            <li class="menu-item">Viajes</li>
+        </ul>
+
+        <!-- Opciones a la derecha -->
+        <div class="right-options">
+            <button class="button">Iniciar sesión</button>
+        </div>
+    </header>
+
+    
+    <section class="hero">
+    <div class="hero-content">
+         <h2 class="texto-secundario">Descubre</h2>
+        <h1 class="texto-principal">BAÑOS DE AGUA SANTA</h1>
+        
+            <p> agencias de turismo, lugares de entretenimiento, salud, servicios profesionales y todo lo que necesites.</p>
+     <!-- Cuadro de búsqueda -->
+    <div class="search-box">
+        <i> <div class="logo">
+            <img src="Image/Buscador.png" alt="Logo">
+            
+        </div>
+    </i> <!-- Puedes usar un SVG o un ícono de FontAwesome -->
+        <input type="text" placeholder="Busca tu lugar favorito ">
+        <button>Buscar</button>
+    </div>
+      <div id="chat-box" class="chat-hidden">
+    <div id="chat-header">
+        <span>Asistente virtual </span>
+        <button id="close-chat">X</button>
+    </div>
+    <div id="chat-body">
+        <!-- Mensajes -->
+        <div class="chat-message user-message">
+            <p>¡Hola! 😊 Bienvenid@. Estoy aquí para ayudarte con información sobre sitios turísticos en Baños. Solo dime el nombre del lugar y con gusto te daré los detalles. 🌟</p>
+            <span class="chat-time">22:44</span>
+        </div>
+    </div>
+    <div id="chat-input-bar">
+        <button id="emoji-btn">😊</button>
+        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." />
+        <button id="send-btn">➤</button>
+    </div>  
+    </div>
+     <!-- Cuadrícula de sitios turísticos -->
+            <div class="turistic-section">
+                <h2>Explora los mejores sitios turísticos</h2>
+                <div class="turistic-grid">
+                    <!-- Item 1 -->
+                    <div class="grid-item">
+                        <img src="Destinos/CascadaP.WEBP" alt="Sitio Turístico 1" class="item-image">
+                        <div class="item-info">
+                            <h3>Cascada Pailón del Diablo</h3>
+                            <p>  Una de las cascadas más famosas de Ecuador</p>
+                            <button class="info-button">Más información</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="grid-item">
+                        <img src="Destinos/CasaA.jpg" alt="Sitio Turístico 2" class="item-image">
+                        <div class="item-info">
+                            <h3>Casa del Árbol</h3>
+                            <p> Hogar del famoso “Columpio del Fin del Mundo”.</p>
+                            <button class="info-button">Más información</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="grid-item">
+                        <img src="Destinos/TermasVirgen.jpg" alt="Sitio Turístico 3" class="item-image">
+                        <div class="item-info">
+                            <h3>Termas de la Virgen</h3>
+                            <p> Piscinas de agua termal natural perfectas para relajarse.</p>
+                            <button class="info-button">Más información</button>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="grid-item">
+                        <img src="Destinos/RutaCascadas.jpg" alt="Sitio Turístico 4" class="item-image">
+                        <div class="item-info">
+                            <h3>Ruta de las Cascadas</h3>
+                            <p> Una ruta llena de cascadas impresionantes como Manto de la Novia, Agoyán y El Fantasma.</p>
+                            <button class="info-button">Más información</button>
+                        </div>
+                    </div>
+                   <!-- Item 5 -->
+                    <div class="grid-item">
+                      <img src="Destinos/MiradorBellavista.jpeg" alt="Sitio Turístico 5" class="item-image">
+                          <div class="item-info">
+                          <h3>Mirador de Bellavista</h3>
+                           <p>Disfruta de una vista panorámica de Baños y sus alrededores desde este impresionante mirador.</p>
+                          <button class="info-button">Más información</button>
+                         </div>
+                          </div>
+                   <!-- Item 6 -->
+                          <div class="grid-item">
+                          <img src="Destinos/Basilica.jpg" alt="Sitio Turístico 6" class="item-image">
+                          <div class="item-info">
+                           <h3>Basílica de Nuestra Señora del Rosario</h3>
+                              <p>Admira la icónica basílica construida en honor a la Virgen de Agua Santa, protectora de la ciudad.</p>
+                                <button class="info-button">Más información</button>
+                       </div>
+                      </div>
+                      <!-- Item 7 -->                   
+                    <div class="grid-item">
+                   <img src="Destinos/VueloCondor.jpg" alt="Sitio Turístico 7" class="item-image">
+                  <div class="item-info">
+                    <h3>El Vuelo del Cóndor</h3>
+                   <p>Experimenta la adrenalina de volar sobre paisajes montañosos en un columpio gigante.</p>
+                 <button class="info-button">Más información</button>
+                 </div>
+                  </div>
+
+
+                    <!-- Item 5 -->
+                    <div class="grid-item">
+                        <img src="Destinos/VolcánTungurahua.jpg" alt="Sitio Turístico 5" class="item-image">
+                        <div class="item-info">
+                            <h3>Volcán Tungurahua</h3>
+                            <p>  Aunque no siempre se puede acceder, los miradores ofrecen vistas espectaculares de este volcán activo.</p>
+                            <button class="info-button">Más información</button>
+                        </div>
+                    </div>
+
+                    <!-- Continúa añadiendo más elementos hasta los 20 -->
+                </div>
+            </div>
+        </div>
+</section>
+
+
+    <script src="scripts.js"></script> <!-- Archivo externo de JavaScript -->
+</body>
+</html>

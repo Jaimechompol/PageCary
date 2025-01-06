@@ -1,0 +1,105 @@
+<script>
+    // Lista de sitios turísticos con su información
+    const sitiosTuristicos = [
+        {
+            nombre: "La Casa del Árbol",
+            descripcion: "Famoso por su columpio del fin del mundo con vistas espectaculares del volcán Tungurahua.",
+            ubicacion: "Runtún, Baños",
+            horario: "08:00 - 18:00",
+            precio_entrada: "USD 1"
+        },
+        {
+            nombre: "Cascada Pailón del Diablo",
+            descripcion: "Impresionante cascada con senderos y miradores para disfrutar de su majestuosidad.",
+            ubicacion: "Ruta de las Cascadas, Río Verde",
+            horario: "09:00 - 17:00",
+            precio_entrada: "USD 2"
+        },
+        {
+            nombre: "Termas de la Virgen",
+            descripcion: "Piscinas de aguas termales naturales para relajarse y disfrutar de sus propiedades terapéuticas.",
+            ubicacion: "Centro de Baños",
+            horario: "04:30 - 21:00",
+            precio_entrada: "USD 3 - 6"
+        },
+        // Agrega más sitios aquí...
+    ];
+
+    // Esperar a que el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', () => {
+        // Selecciona todos los elementos del menú
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        // Agrega un evento 'click' a cada elemento del menú
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Elimina la clase 'active' de todos los elementos
+                menuItems.forEach(menu => menu.classList.remove('active'));
+
+                // Agrega la clase 'active' al elemento seleccionado
+                item.classList.add('active');
+            });
+        });
+
+        // Verificación adicional: elimina duplicados de 'search-box'
+        const searchBoxes = document.querySelectorAll('.search-box');
+        if (searchBoxes.length > 1) {
+            for (let i = 1; i < searchBoxes.length; i++) {
+                searchBoxes[i].remove();
+            }
+        }
+
+        // Esperar 5 segundos antes de mostrar el chat
+        setTimeout(() => {
+            const chatBox = document.getElementById('chat-box');
+            chatBox.classList.remove('chat-hidden');
+            chatBox.classList.add('chat-visible');
+        }, 5000);
+
+        // Cerrar el chat al hacer clic en el botón "X"
+        document.getElementById('close-chat').addEventListener('click', () => {
+            const chatBox = document.getElementById('chat-box');
+            chatBox.classList.remove('chat-visible');
+            chatBox.classList.add('chat-hidden');
+        });
+
+        // Evento al hacer clic en el botón de enviar
+        document.getElementById('send-btn').addEventListener('click', () => {
+            const chatBody = document.getElementById('chat-body');
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+
+            if (message) {
+                // Crear el nuevo mensaje
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('chat-message', 'user-message');
+                userMessage.innerHTML = `<p>${message}</p><span class="chat-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</span>`;
+                chatBody.appendChild(userMessage);
+
+                // Responder si el mensaje coincide con un sitio turístico
+                const sitioEncontrado = sitiosTuristicos.find(sitio =>
+                    message.toLowerCase().includes(sitio.nombre.toLowerCase())
+                );
+
+                if (sitioEncontrado) {
+                    const botResponse = document.createElement('div');
+                    botResponse.classList.add('chat-message', 'bot-message');
+                    botResponse.innerHTML = `
+                        <p>
+                            <strong>${sitioEncontrado.nombre}</strong><br>
+                            ${sitioEncontrado.descripcion}<br>
+                            <em>Ubicación:</em> ${sitioEncontrado.ubicacion}<br>
+                            <em>Horario:</em> ${sitioEncontrado.horario}<br>
+                            <em>Precio:</em> ${sitioEncontrado.precio_entrada}
+                        </p>
+                        <span class="chat-time">${new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</span>`;
+                    chatBody.appendChild(botResponse);
+                }
+
+                // Limpiar el input y desplazar hacia abajo
+                input.value = '';
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+        });
+    });
+</script>
